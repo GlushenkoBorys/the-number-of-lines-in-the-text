@@ -18,17 +18,19 @@ namespace Lines_in_the_text
             bool mylineIsTrue = text.Contains("\n");
             char[] line = text.ToCharArray();
             int numberLines = 1;
-            int numberletters = 0;
+            int numberletters1 = 0;
+            int numberletters2 = 0;
+            int numberletters3 = 0;
             for (int i = 0; i < line.Length; i++)
             {
-                if(line[i] == '\n')
+                if (line[i] == '\n')
                 {
                     numberLines++;
-                }  
-                
-                if(line[i] != ' ')
+                }
+
+                if (line[i] != ' ')
                 {
-                    if(line[i] != '.')
+                    if (line[i] != '.')
                     {
                         if (line[i] != ',')
                         {
@@ -46,7 +48,7 @@ namespace Lines_in_the_text
                                                 {
                                                     if (line[i] != '-')
                                                     {
-                                                        numberletters++;
+                                                        numberletters1++;
                                                     }
                                                 }
                                             }
@@ -56,10 +58,27 @@ namespace Lines_in_the_text
                             }
                         }
                     }
-                }                              
+                }
+
+                if (line[i] != ' ' &
+                    line[i] != '.' &
+                    line[i] != ',' &
+                    line[i] != '"' &
+                    line[i] != '!' &
+                    line[i] != '?' &
+                    line[i] != ':' &
+                    line[i] != ';' &
+                    line[i] != '\n'&
+                    line[i] != '-')
+                {
+                    numberletters2++;
+                }
+
+
             }
             Console.WriteLine($"Количество строк в тексте = {numberLines}");
-            Console.WriteLine($"Количество букв в тексте = {numberletters}");
+            Console.WriteLine($"Количество букв в тексте (метод 1) = {numberletters1}");
+            Console.WriteLine($"Количество букв в тексте (метод 2) = {numberletters2}");
             Console.WriteLine(mylineIsTrue);
             Console.WriteLine(text);
         }
