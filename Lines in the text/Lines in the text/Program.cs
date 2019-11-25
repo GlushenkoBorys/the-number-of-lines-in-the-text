@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 // узнать количество строк в тексте
+// узнать количество букв в тексте
 
 namespace Lines_in_the_text
 {
@@ -12,8 +13,9 @@ namespace Lines_in_the_text
     {
         static void Main(string[] args)
         {
+
             string text = "He said the government would of structural defences\nfor the lagoon city, referring to the so-called\nMose project - a hydraulic\nbarrier system to shut of rising sea levels and winter storms.";
-            bool myline = text.Contains("\n");
+            bool mylineIsTrue = text.Contains("\n");
             char[] line = text.ToCharArray();
             int numberLines = 1;
             int numberletters = 0;
@@ -58,7 +60,7 @@ namespace Lines_in_the_text
             }
             Console.WriteLine($"Количество строк в тексте = {numberLines}");
             Console.WriteLine($"Количество букв в тексте = {numberletters}");
-            Console.WriteLine(myline);
+            Console.WriteLine(mylineIsTrue);
             Console.WriteLine(text);
         }
     }
